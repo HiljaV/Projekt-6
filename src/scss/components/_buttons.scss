@@ -15,8 +15,13 @@
     font-style: italic;
     display: inline-block;
     text-decoration: none;
+    transform: skew(-10deg);
     &:hover {
         background-color: $hover-background;
         color: $hover-color;
+    }
+    & > span {
+        display: inline-block;
+        transform: skew(10deg);
     }
 }

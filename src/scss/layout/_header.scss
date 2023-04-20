@@ -1,0 +1,136 @@
+@use '../components/details';
+
+.site-header {
+    position: fixed;
+    max-height: 150px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        align-items: center;
+        padding: 3rem 0rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__menu {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: var(--gap-m);
+        position: relative;
+    }
+
+    &__branding {
+        margin-right: auto;
+    }
+}
+
+.menu {
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    &__link {
+        color: var(--color-light);
+        transition: color 0.2s;
+        font-size: var(--font-size-3);
+    }
+
+    &__link:hover {
+        color: var(--color-accent-1);
+    }
+
+    
+    &__item--current {
+        
+        .menu__link {
+            margin-top: 3px;
+            @include details.underline();
+            display: inline-block;
+        }
+    }
+
+}
+
+.menu-button {
+    height: 26px;
+    width: 26px;
+    position: relative;
+    background: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+
+    &--close {
+
+        .menu-button__hamburger {
+
+            transition: transform 0.2s 0.2s;
+            transform: rotate(45deg) translate(-50%, -50%);
+
+            &::before {
+                transition: top 0.2s, transform 0.2s 0.2s;
+                transform: rotate(90deg);
+                top: 0;
+            }
+
+            &:after {
+                
+                transition: width 0.2s;
+                width: 0;
+
+            }
+        }
+
+    }
+
+    &__hamburger {
+        transform-origin: left top;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transition: transform 0.2s;
+        transform: translate(-50%, -50%) rotate(0);
+        background-color: var(--color-light);
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -8px;
+            height: 1px;
+            width: 100%;
+            background-color: inherit;
+        }
+
+        &:before {
+            transition: top 0.2s 0.2s, transform 0.2s;
+        }
+
+        &:after {
+            top: 8px;
+            width: 70%;
+            transition: width 0.2s 0.2s;
+        }
+    }
+}
