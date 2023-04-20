@@ -212,6 +212,7 @@ li {
 .hero__inner {
   grid-column: inner;
   display: grid;
+  position: relative;
 }
 .hero__header {
   display: grid;
@@ -255,12 +256,13 @@ li {
   background-color: var(--color-accent-2);
 }
 .hero__bottom {
+  grid-column: inner;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
   position: relative;
-  top: 6rem;
+  bottom: 0rem;
 }
 .hero__read-more {
   display: flex;

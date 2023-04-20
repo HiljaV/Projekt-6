@@ -14,7 +14,8 @@
     &__inner {
         grid-column: inner;
         display: grid;
-        
+        position: relative;
+    
     }
 
     &__header {
@@ -49,12 +50,13 @@
     }
 
     &__bottom {
+        grid-column: inner;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 1rem;
         position: relative;
-        top: 6rem;
+        bottom: 0rem;
     }
 
     &__read-more {
