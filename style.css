@@ -36,6 +36,7 @@
   --font-size-4: calc( var(--font-size-3) * var(--font-scale) );
   --font-size-5: calc( var(--font-size-4) * var(--font-scale) );
   --font-size-6: calc( var(--font-size-5) * var(--font-scale) );
+  --font-size-7: calc( var(--font-size-6) * var(--font-scale) );
   --page-width: 80rem;
   --grid-container: [full-start] minmax(32px, 1fr) [inner-start] minmax(0, var(--page-width)) [inner-end] minmax(32px, 1fr) [full-end];
 }
@@ -63,6 +64,30 @@ h1, h2, h3, h4, h5, h6 {
   font-style: italic;
 }
 
+h1 {
+  font-size: var(--font-size-6);
+}
+
+h2 {
+  font-size: var(--font-size-5);
+}
+
+h3 {
+  font-size: var(--font-size-4);
+}
+
+h4 {
+  font-size: var(--font-size-3);
+}
+
+h5 {
+  font-size: var(--font-size-2);
+}
+
+h6 {
+  font-size: var(--font-size-1);
+}
+
 p {
   line-height: var(--line-height);
 }
@@ -86,7 +111,7 @@ li {
 }
 
 .site-header {
-  position: fixed;
+  position: absolute;
   max-height: 150px;
   width: 100%;
   left: 0;
@@ -287,6 +312,67 @@ li {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.promo {
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  padding: 4rem 0;
+}
+.promo__inner {
+  grid-column: inner;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-m);
+}
+.promo__box {
+  position: relative;
+  text-align: center;
+}
+.promo__box-1 .promo__pre-title {
+  color: var(--color-light);
+}
+.promo__box-1 .promo__title {
+  color: var(--color-light);
+}
+.promo__box-2 .promo__pre-title {
+  color: var(--color-dark-200);
+}
+.promo__box-2 .promo__title {
+  color: var(--color-accent-1);
+}
+.promo__box-3 .promo__pre-title {
+  color: var(--color-dark-500);
+}
+.promo__box-3 .promo__title {
+  color: var(--color-dark-200);
+}
+.promo__item {
+  flex: 1;
+}
+.promo img {
+  margin: 0;
+}
+.promo__pre-title {
+  position: absolute;
+  bottom: 6rem;
+  left: 3rem;
+  z-index: 2;
+}
+.promo__title {
+  position: absolute;
+  left: 3rem;
+  bottom: 4rem;
+  z-index: 2;
+  font-size: var(--font-size-7);
+  margin: 0;
+}
+.promo__asterisk {
+  position: absolute;
+  font-size: 11px;
+  color: var(--color-dark-600);
+  left: 3rem;
+  bottom: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
