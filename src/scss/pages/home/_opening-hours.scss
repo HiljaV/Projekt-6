@@ -1,0 +1,139 @@
+@use '../../components/buttons' as button;
+
+.opening-hours {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    margin: 3rem 0;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: var(--gap-l);
+    }
+
+    &__header__left {
+        display: flex;
+        gap: var(--gap-m);
+        align-items: end;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: var(--font-size-7);
+    }
+
+    &__current-week {
+        margin: 0;
+        color: var(--color-accent-2);
+    }
+
+    &__inner {
+        grid-column: inner;
+    }
+
+    &__lists {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--gap-m);
+    }
+
+    &__reception {
+        background-color: var(--color-dark-300);
+        color: var(--color-light);
+        position: relative;
+        padding: 0rem 1rem;
+
+        
+        &:before {
+            content: url('assets/images/corner.svg');
+            position: absolute;
+            right: 0px;
+            
+        }
+    }
+}
+
+.reception__list, .keycard__list, .sauna__list {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    list-style: none;
+    font-size: var(--font-size-2);
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    gap: 0;
+}
+
+.calender__button {
+    @include button.default();
+    display: block;
+}
+
+.reception {
+    position: relative;
+
+    &__asterisk {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    &__item--current-day {
+        color: var(--color-accent-1);
+    }
+
+}
+
+.sauna {
+    
+    &__title {
+        color: var(--color-dark-200);
+    }
+
+    &__item {
+        color: var(--color-dark-500);
+    }
+
+    &__item--current-day {
+        color: var(--color-accent-2);
+    }
+
+}
+
+.keycard {
+
+    &__title {
+        color: var(--color-dark-200);
+    }
+
+    &__item {
+        color: var(--color-dark-500);
+    }
+
+    &__item--current-day {
+        color: var(--color-accent-2);
+    }
+
+}
+
+.reception__title, .sauna__title, .keycard__title {
+    margin-left: 2rem;
+}
+
+.reception__item, .keycard__item, .sauna__item {
+    padding-left: 1rem;
+}
+
+.reception__item--grey {
+    background-color: var(--color-dark-400);
+}
+
+.keycard__item--grey, .sauna__item--grey {
+    background-color: var(--color-dark-700);
+}
+
+.reception__item--bold, .keycard__item--bold, .sauna__item--bold {
+    font-weight: 900;
+}

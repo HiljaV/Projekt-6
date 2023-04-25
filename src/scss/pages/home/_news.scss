@@ -70,7 +70,7 @@
         }
 
         .post__title {
-            font-size: 88px;
+            font-size: clamp(1.5625rem, -4.3438rem + 19.6875vw, 5.5rem);
             margin: var(--gap-m) 0;
         }
     }

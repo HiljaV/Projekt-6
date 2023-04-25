@@ -1,0 +1,38 @@
+.banner {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    padding: 3rem 0;
+
+    &__inner {
+        grid-column: inner;
+    }
+
+    &__content {
+        position: relative;
+
+        &:hover .banner__image {
+            transform: scale(0.98);
+        }
+    }
+
+    &__image {
+        transition: transform 0.2s;
+    }
+
+    &__titles {
+        position: absolute;
+        bottom: 6rem;
+        left: 3rem;
+    }
+
+    &__title {
+        font-size: clamp(1.5625rem, -4.3438rem + 19.6875vw, 5.5rem);
+        color: var(--color-light);
+        margin: 0;
+    }
+
+    &__subtitle {
+        color: var(--color-light);
+        margin: 0;
+    }
+}

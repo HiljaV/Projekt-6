@@ -28,7 +28,7 @@
         line-height: 1.12;
         margin-top: 11rem;
         margin-bottom: 3rem;
-        font-size: 100px;
+        font-size: clamp(1.5625rem, -5.4688rem + 23.4375vw, 6.25rem);
     }
 
     &__buttons {
@@ -46,6 +46,10 @@
 
         &--blue {
             background-color: var(--color-accent-2);
+
+            &:hover {
+                background-color: var(--color-accent-1);
+            }
         }
     }
 
@@ -88,4 +92,14 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    &__link {
+        transition: transform 0.2s;
+
+        &:hover .social__logo {
+            transform: scale(1.1);
+        }
+    }
+
+
 }

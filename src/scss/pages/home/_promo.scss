@@ -13,6 +13,7 @@
     &__box {
         position: relative;
         text-align: center;
+        overflow: hidden;
 
             &-1 {
                 .promo__pre-title {
@@ -43,6 +44,14 @@
                     color: var(--color-dark-200);
                 }
             }
+
+        &:hover .promo__image {
+            transform: scale(0.95);
+        }
+    }
+
+    &__image {
+        transition: transform 0.2s;
     }
 
     &__item {
