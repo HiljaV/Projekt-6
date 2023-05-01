@@ -1,7 +1,7 @@
 @use '../components/details';
 
 .site-header {
-    position: absolute;
+    position: fixed;
     max-height: 150px;
     width: 100%;
     left: 0;
@@ -9,6 +9,19 @@
     z-index: 999;
     display: grid;
     grid-template-columns: var(--grid-container);
+
+    &--scroll {
+        background-color: var(--color-dark);
+        height: 80px;
+
+        .site-header__inner {
+            padding: 1rem 0rem;
+        }
+
+        .site-header__branding {
+            display: none;
+        }
+    }
 
     &__inner {
         grid-column: inner;

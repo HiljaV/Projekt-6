@@ -1,0 +1,26 @@
+const headerScroll = () => {
+
+    //Get elements from DOM
+    const header = document.querySelector('.site-header')
+
+    // Toggle Header Class
+    const toggleHeaderClass = () => {
+        
+        // If window has scrolled more than 200px, add a class
+        // Else remove class
+        if ( window.scrollY > 200 ) {
+
+            header.classList.add('site-header--scroll')
+
+        }
+
+        else {
+            header.classList.remove('site-header--scroll')
+        }
+    }
+
+    //Add event to window scroll
+    window.addEventListener('scroll', toggleHeaderClass)
+}
+
+headerScroll()
